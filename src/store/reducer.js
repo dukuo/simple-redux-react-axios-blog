@@ -14,15 +14,10 @@ const reducer = (state = initialState, action) => {
                 posts: action.posts
             }
         case actionTypes.ADD_POST:
-            const tmpPost = { ...action.post }
-
-            const lastID = state.posts.reduce((acc, curr) => acc < curr.id ? curr.id : acc, 0)
-            tmpPost.userId = new Buffer(action.post.author).toString('base64')
-            tmpPost.id = lastID + 1
-
+            console.log(action)
             return {
                 ...state,
-                posts: state.posts.concat(tmpPost)
+                posts: state.posts.concat(action.post)
             }
         case actionTypes.DELETE_POST:
             return {

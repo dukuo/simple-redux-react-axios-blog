@@ -8,6 +8,7 @@ class FullPost extends Component {
         if(!!this.props.post) {
             post = (
                 <div className="FullPost">
+                    <p><button onClick={() => this.props.edit(this.props.post.id)}>Edit post</button></p>
                     <h1>{this.props.post.title}</h1>
                     <p>{this.props.post.content}</p>
                     <p>{this.props.post.body}</p>
