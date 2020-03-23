@@ -4,7 +4,7 @@ import './Post.css';
 
 const post = (props) => {
        return(
-        <article className="Post" onClick={() => props.click(props.post)}>
+        <article className="Post" onClick={() => props.click(props.post.id)}>
             <sub>{props.post.id}</sub>
             <h1>{props.post.title}</h1>
             <div className="Info">
